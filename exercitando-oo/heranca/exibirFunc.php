@@ -18,7 +18,6 @@
                 if($cargo === "1")
                 {
                     $funcionario = new Gerente($nome, $salario, $observacao);
-                    $funcionario->relatorioFunc();
                 }
     
             }catch(Exception $e)
@@ -31,13 +30,15 @@
                 if($cargo === "2")
                 {
                     $funcionario = new Programador($nome, $salario, $observacao);
-                    $funcionario->relatorioFunc();
                 }
     
             }catch(Exception $e)
             {
                 echo "Erro na criacao do Funcionario(Programador)!", $e->getMessage(), "\n";
             }
+
+            $funcionario->relatorioFunc();
+
         }else
         {
             echo "<p>Valores do formulário inválidos!</p>";

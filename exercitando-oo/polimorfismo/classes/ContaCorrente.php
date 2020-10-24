@@ -12,7 +12,7 @@
 
         public function saca($value = 0.0)
         {
-            // echo "<p>Nome: {$this->getNome()}</p>";
+            echo "<p>Valor para saque de conta corrente: {$value}</p>";
         }
 
     }

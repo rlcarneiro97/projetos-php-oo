@@ -13,17 +13,17 @@
 
         public function deposita($value = 0.0)
         {
-            // echo "<p>Nome: {$this->getNome()}</p>";
+            echo "<p>Valor para deposito: {$value}</p>";
         }
 
         public function saca($value = 0.0)
         {
-            // echo "<p>Nome: {$this->getNome()}</p>";
+            echo "<p>Valor para saque: {$value}</p>";
         }
 
         public function imprimeExtrato()
         {
-            // echo "<p>Nome: {$this->getNome()}</p>";
+            echo "<p>Imprime o Extrato</p>";
         }
 
         /**

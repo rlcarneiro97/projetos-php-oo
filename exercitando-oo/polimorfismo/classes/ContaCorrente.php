@@ -14,7 +14,7 @@
         {
             if($this->getSaldo() >= $value)
             {
-                $this->setSaldo($this->getSaldo() - $value - 0.1);
+                $this->setSaldo($this->getSaldo() - $value - 0.10);
             }else
             {
                 echo "<p>Saldo Insuficiente!</p>";

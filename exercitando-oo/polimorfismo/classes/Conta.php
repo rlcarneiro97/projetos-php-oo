@@ -2,7 +2,7 @@
 
     namespace Classes;
 
-    class Conta
+    abstract class Conta
     {
         protected $saldo;
 

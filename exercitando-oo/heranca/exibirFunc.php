@@ -1,10 +1,12 @@
 <?php
 
-    if($_POST){   
+    require_once "autoload.php";
 
-        require_once "classes/Funcionario.php";
-        require_once "classes/Programador.php";
-        require_once "classes/Gerente.php";
+    use Classes\Funcionario;
+    use Classes\Programador;
+    use Classes\Gerente;
+
+    if($_POST){
 
         $nome = $_POST['nome'];
         $salario = $_POST['salario'];

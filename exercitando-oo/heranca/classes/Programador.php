@@ -1,5 +1,7 @@
 <?php
 
+    namespace Classes;
+
     class Programador extends Funcionario
     {
 

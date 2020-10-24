@@ -1,5 +1,7 @@
 <?php
 
+    namespace Classes;
+
     class Funcionario
     {
         protected $nome;

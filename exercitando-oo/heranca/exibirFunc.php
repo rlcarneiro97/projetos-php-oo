@@ -1,26 +1,51 @@
 <?php
 
-    require_once "classes/Funcionario.php";
-    require_once "classes/Programador.php";
-    require_once "classes/Gerente.php";
+    if($_POST){   
 
-    $nome = $_POST['nome'];
-    $salario = $_POST['salario'];
-    $observacao = $_POST['observacao'];
-    $cargo = $_POST['cargo'];
+        require_once "classes/Funcionario.php";
+        require_once "classes/Programador.php";
+        require_once "classes/Gerente.php";
 
-    // echo "<p>Nome: {$nome}</p><p>Salario: {$salario}</p><p>Obs: {$observacao}</p><p>Cargo: {$cargo}</p>";
+        $nome = $_POST['nome'];
+        $salario = $_POST['salario'];
+        $observacao = $_POST['observacao'];
+        $cargo = $_POST['cargo'];
 
-    if($cargo === "1")
-    {
-        $gerente = new Gerente($nome, $salario, $observacao);
-        $gerente->relatorioFunc();
-    }
+        if(is_string($nome) && !is_numeric($nome) && is_string($observacao) && !is_numeric($observacao) && is_numeric($salario) && is_numeric($cargo))
+        {
+            try
+            {
+                if($cargo === "1")
+                {
+                    $funcionario = new Gerente($nome, $salario, $observacao);
+                    $funcionario->relatorioFunc();
+                }
     
-    if($cargo === "2")
+            }catch(Exception $e)
+            {
+                echo "Erro na criacao do Funcionario(Gerente)!", $e->getMessage(), "\n";
+            }
+    
+            try
+            {
+                if($cargo === "2")
+                {
+                    $funcionario = new Programador($nome, $salario, $observacao);
+                    $funcionario->relatorioFunc();
+                }
+    
+            }catch(Exception $e)
+            {
+                echo "Erro na criacao do Funcionario(Programador)!", $e->getMessage(), "\n";
+            }
+        }else
+        {
+            echo "<p>Valores do formulário inválidos!</p>";
+        }
+
+    }else
     {
-        $programador = new Programador($nome, $salario, $observacao);
-        $programador->relatorioFunc();
+        echo "<p>Nenhum dado for recebido pelo Formulário</p>";
     }
 
 ?>

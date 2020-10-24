@@ -12,7 +12,13 @@
 
         public function saca($value = 0.0)
         {
-            echo "<p>Valor para saque de conta corrente: {$value}</p>";
+            if($this->getSaldo() >= $value)
+            {
+                $this->setSaldo($this->getSaldo() - $value - 0.1);
+            }else
+            {
+                echo "<p>Saldo Insuficiente!</p>";
+            }
         }
 
     }

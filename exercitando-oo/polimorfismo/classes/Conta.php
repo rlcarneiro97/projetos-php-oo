@@ -13,17 +13,24 @@
 
         public function deposita($value = 0.0)
         {
-            echo "<p>Valor para deposito: {$value}</p>";
+            $this->setSaldo($this->getSaldo() + $value);
         }
 
         public function saca($value = 0.0)
         {
-            echo "<p>Valor para saque: {$value}</p>";
+            if($this->getSaldo() >= $value)
+            {
+                $this->setSaldo($this->getSaldo() - $value);
+            }else
+            {
+                echo "<p>Saldo Insuficiente!</p>";
+            }
+            
         }
 
         public function imprimeExtrato()
         {
-            echo "<p>Imprime o Extrato</p>";
+            echo "<p>Extrato da Conta: {$this->getSaldo()}</p>";
         }
 
         /**

@@ -9,16 +9,18 @@
     $observacao = $_POST['observacao'];
     $cargo = $_POST['cargo'];
 
-    // echo "<p>{$nome}</p><p>{$salario}</p><p>{$observacao}</p><p>{$cargo}</p>";
+    // echo "<p>Nome: {$nome}</p><p>Salario: {$salario}</p><p>Obs: {$observacao}</p><p>Cargo: {$cargo}</p>";
 
-    if($cargo === "gerente")
+    if($cargo === "1")
     {
         $gerente = new Gerente($nome, $salario, $observacao);
+        $gerente->relatorioFunc();
     }
     
-    if($cargo === "programador")
+    if($cargo === "2")
     {
         $programador = new Programador($nome, $salario, $observacao);
+        $programador->relatorioFunc();
     }
 
 ?>

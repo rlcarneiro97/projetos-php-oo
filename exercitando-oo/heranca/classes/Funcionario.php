@@ -2,7 +2,6 @@
 
     class Funcionario
     {
-
         protected $nome;
         protected $salario;
 
@@ -14,7 +13,8 @@
 
         public function relatorioFunc()
         {
-            echo "<p>A ser implementado no futuro!</p>";
+            echo "<p>Nome: {$this->getNome()}</p>";
+            echo "<p>Salario: {$this->getSalario()}</p>";
         }
 
         /**

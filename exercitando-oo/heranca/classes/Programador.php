@@ -5,11 +5,16 @@
 
         private $linguagem;
 
-        public function __construct($nome, $salario, $linguagem="")
+        public function __construct($nome="", $salario=0.0, $linguagem="")
         {
-            parent::__construct($nome);
-            parent::__construct($salario);
+            parent::__construct($nome, $salario);
             $this->linguagem = $linguagem;
+        }
+
+        public function relatorioFunc()
+        {
+            parent::relatorioFunc();
+            echo "<p>Linguagem: {$this->getLinguagem()}</p>";
         }
 
         /**

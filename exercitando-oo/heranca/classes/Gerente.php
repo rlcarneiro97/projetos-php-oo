@@ -5,11 +5,16 @@
 
         private $projeto;
 
-        public function __construct($nome, $salario, $projeto="")
+        public function __construct($nome="", $salario=0.0, $projeto="")
         {
-            parent::__construct($nome);
-            parent::__construct($salario);
+            parent::__construct($nome, $salario);
             $this->projeto = $projeto;
+        }
+
+        public function relatorioFunc()
+        {
+            parent::relatorioFunc();
+            echo "<p>Projeto: {$this->getProjeto()}</p>";
         }
 
         /**

@@ -1,6 +1,6 @@
 <?php
 
-    class Gerente extends Funcionario
+    class Programador extends Funcionario
     {
 
         private $linguagem;

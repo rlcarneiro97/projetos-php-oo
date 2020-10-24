@@ -11,7 +11,7 @@
         $observacao = $_POST['observacao'];
         $cargo = $_POST['cargo'];
 
-        if(is_string($nome) && !is_numeric($nome) && is_string($observacao) && !is_numeric($observacao) && is_numeric($salario) && is_numeric($cargo))
+        if(is_string($nome) && !is_numeric($nome) && is_string($observacao) && !is_numeric($observacao) && is_numeric($salario) && $salario > 0 && is_numeric($cargo))
         {
             try
             {

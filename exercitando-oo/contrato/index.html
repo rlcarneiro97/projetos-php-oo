@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrato</title>
+</head>
+<body>
+    <form action="exibir_veiculo.php" method="POST">
+        <input type="text" placeholder="Nome" name="nome" id="nome" required />
+        <input type="text" placeholder="Marca" name="marca" id="marca" required />
+        <input type="text" placeholder="Modelo" name="modelo" id="modelo" required />
+        <select name="tipo-veiculo" id="tipo-veiculo" required>
+            <option value="1">Moto</option>
+            <option value="2">Carro</option>
+        </select>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

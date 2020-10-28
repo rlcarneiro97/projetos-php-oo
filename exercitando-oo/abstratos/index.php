@@ -1,6 +1,6 @@
 <?php
 
-    require_once "autoload.php";
+    require_once "../abstratos/autoload.php";
 
     use Classes\Animal;
     use Classes\Carnivoro;

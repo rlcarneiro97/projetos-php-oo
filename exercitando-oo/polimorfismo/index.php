@@ -1,6 +1,6 @@
 <?php
 
-    require_once "autoload.php";
+    require_once "../polimorfismo/autoload.php";
 
     use Classes\Conta;
     use Classes\ContaCorrente;

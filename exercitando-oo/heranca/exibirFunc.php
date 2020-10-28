@@ -1,6 +1,6 @@
 <?php
 
-    require_once "autoload.php";
+    require_once "../heranca/autoload.php";
 
     use Classes\Funcionario;
     use Classes\Programador;

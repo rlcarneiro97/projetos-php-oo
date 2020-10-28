@@ -7,40 +7,11 @@
 </head>
 <body>
     <?php
-        require_once "../sistema/conexao.php";
-        $connDatabase = Conexao::getInstance();
+        require_once "../sistema/classes/Conexao.php";
+        require_once "../sistema/classes/Cadastro.php";
 
-        $sql = "SELECT * FROM cadastro";
-        $tabela = $connDatabase->query($sql);
-
-        if($tabela){
-            echo "
-            <table border='1'>
-                <tr>
-                    <td>ID</td>
-                    <td>NOME</td>
-                    <td>TELEFONE</td>
-                    <td>EMAIL</td>
-                </tr>
-            ";
-
-            foreach($tabela as $linha){
-                $id = $linha['id'];
-                echo "
-                <tr>
-                    <td>" . $linha['id'] . "</td>
-                    <td>" . $linha['nome'] . "</td>
-                    <td>" . $linha['telefone'] . "</td>
-                    <td>" . $linha['email'] . "</td>
-                    <!-- <td><a href='exemploDelete.php?id=$id'>Alterar</a></td> -->
-                    <!-- <td><a href='exemploDelete.php?id=$id'>Excluir</a></td> -->
-                </tr>";
-            }
-
-            echo "</table>";
-        }
-
-        $connDatabase = null;
+        $cadastro = Cadastro::getInstance();
+        $cadastro->exibir();
     ?>
         <p>
             <button><a href="index.html">Cadastrar Usuário</a></button>

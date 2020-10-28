@@ -1,6 +1,7 @@
 <?php
 
-    require_once "../sistema/conexao.php";
+    require_once "../sistema/classes/Conexao.php";
+    require_once "../sistema/classes/Cadastro.php";
 
     if($_POST)
     {
@@ -12,7 +13,12 @@
         {
             try
             {
-                createBook($nome, $telefone, $email);
+                $cadastro = Cadastro::getInstance();
+                $cadastro->setNome($nome);
+                $cadastro->setTelefone($telefone);
+                $cadastro->setEmail($email);
+                
+                $cadastro->inserir($cadastro);
 
             }catch(Exception $e)
             {
@@ -26,23 +32,6 @@
     }else
     {
         echo "<p>Nenhum dado for recebido pelo formulário</p>";
-    }
-
-    //functions
-    function createBook($nome, $telefone, $email)
-    {
-        $connDatabase = Conexao::getInstance();
-    
-        $sql = "INSERT INTO cadastro (nome, telefone, email) VALUES (?, ?, ?)";
-        $query = $connDatabase->prepare($sql);
-    
-        $query->bindValue(1, $nome);
-        $query->bindValue(2, $telefone);
-        $query->bindValue(3, $email);
-        $query->execute();
-    
-        $connDatabase = null;
-        header("location: ../sistema/lista_ususarios.php");
     }
 
 ?>
